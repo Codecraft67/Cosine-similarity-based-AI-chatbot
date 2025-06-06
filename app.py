@@ -13,6 +13,7 @@ import os
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)  # Enable CORS
+df = pd.read_csv("qa_dataset.csv", encoding='unicode_escape')
 
 # Download necessary NLTK data only ongce
 nltk.download('punkt', quiet=True)
