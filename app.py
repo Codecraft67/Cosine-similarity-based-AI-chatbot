@@ -90,12 +90,10 @@ def chat():
     except Exception as e:
         return jsonify({"response": "An error occurred: " + str(e)}), 500
 
-# Health check
-@app.route('/', methods=['GET'])
-def index():
+@app.route("/", methods=["GET"])
+def health():
     return "Chatbot API is running."
 
-# Run app
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
